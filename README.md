@@ -16,15 +16,13 @@ This project presents a deep learning-based system for simultaneous prediction o
 
 - Evaluation on 19,200 test samples
 
-Please note that the newest code is published on my Github repository. More new feature can be found [here](https://github.com/Kazawaryu/hr_rr_predict).
-
 ---
 
 ## 1. Introduction
 
 ### 1.1 Background
 
-The task is to design an algorithm to calculate the inter-beat-interval (IBI) and waveform amplitude (WA) from the simulated cardiorespiratory sensor data. For the real-time live demo purpose, please send the sensor data, prediction results and labels to InfluxDB through MQTT and visualize them in the Grafana.
+The task is to design an algorithm to calculate the inter-beat-interval (IBI) and waveform amplitude (WA) from the simulated cardiorespiratory sensor data. 
 
 ### 1.2 Objectives
 
@@ -59,10 +57,6 @@ Each dataset contains:
 - **Output**: HR and RR labels in bpm (only use HR and RR in this project)
 
 - **Total samples**: 96,000 samples across all datasets
-
-### 1.4 MQTT Publisher
-
-This script is provided by the template, only add the interface to online predict the HR and RR.
 
 ---
 
@@ -431,21 +425,11 @@ The hybrid architecture (CNN + DSP features) demonstrates significant advantages
 
 - **Robust Training**: Weighted Huber loss handles outliers effectively
 
-### 3.5 Grafana Visualization Platform
-
-In this project, we design a Grafana board to visualize data from InfluxDB, which is received from the MQTT broker. The compoment is given from the template, and the the data pipeline is shown with detail in the Homework 1.
-
-![grafana](Fig/image.png)
-
-*Figure 6: Grafana data visualization platform*
-
 ---
 
 ## 4. Implementation Details
 
-### 4.1 Framework, Sofware, and Hardware
-
-#### Framework
+### 4.1 Framework
 
 - **Deep Learning Framework**: PyTorch
 
@@ -457,27 +441,6 @@ In this project, we design a Grafana board to visualize data from InfluxDB, whic
 
 - **Machine Learning Utilities**: scikit-learn
 
-#### Software Environment
-
-- **OS**: Ubuntu 22.04
-
-- **Python**: 3.10
-
-- **CUDA**: 12.8
-
-- **Pytorch**: 2.9.1
-
-#### Hardware Environment
-
-- **CPU**: AMD Ryzen7 - 9600x
-
-- **GPU**: Nvidia 5070 Ti
-
-- **MEM**: Adie c28 DDR5 32G x 2
-
-- **Board**: MSI B650i
-
-
 
 ### 4.2 Code Structure
 
@@ -487,7 +450,6 @@ data/
 ├── evaluate_model.py           # Model evaluation script
 ├── plot.py                     # Visualization functions (trend plots, Bland-Altman)
 ├── inference_example.py        # Example inference script
-├── mqtt_publisher_model.py     # MQTT integration for real-time prediction
 └── results/                    # Training results directory
     └── YYYYMMDD_HHMMSS/        # Timestamped result folders
         ├── best_model.pth      # Trained model weights
