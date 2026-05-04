@@ -1,0 +1,27 @@
+{
+  "timestamp": "20251201_191821",
+  "data_paths": [
+    "/home/ghosn/Project/csee8300_3/data/dataset_constant_ibi_constant_wa.npy",
+    "/home/ghosn/Project/csee8300_3/data/dataset_constant_ibi_dynamic_wa.npy",
+    "/home/ghosn/Project/csee8300_3/data/dataset_dynamic_ibi_constant_wa.npy",
+    "/home/ghosn/Project/csee8300_3/data/dataset_dynamic_ibi_dynamic_wa.npy"
+  ],
+  "batch_size": 64,
+  "num_epochs": 100,
+  "learning_rate": 0.001,
+  "test_size": 0.2,
+  "val_size": 0.2,
+  "apply_filter": true,
+  "sampling_rate": 100,
+  "low_cutoff": 0.5,
+  "high_cutoff": 8.0,
+  "filter_order": 4,
+  "hr_weight": 1.0,
+  "rr_weight": 1.6,
+  "use_huber_loss": true,
+  "use_separate_heads": true,
+  "use_dsp_features": true,
+  "total_params": 182466,
+  "trainable_params": 182466,
+  "device": "cuda"
+}
